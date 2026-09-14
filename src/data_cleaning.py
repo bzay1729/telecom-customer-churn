@@ -8,16 +8,21 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     """"Cleaning telecom churn dataset for analysis and modeling."""
 
     cleaned_data = data.copy()
+    charges = cleaned_data["TotalCharges"].str.strip()
 
-    # Removing spaces from column charges before converting to numeric
-    cleaned_data['TotalCharges'] = cleaned_data["TotalCharges"].str.strip()
+    # Only use zero for blank charges when tenure is 0.
+    new_customer_blank = charges.eq("") & cleaned_data["tenure"].eq(0)
 
-    # Blank TotalCharges values belongs to customer with zero tenure.
-    # We use 0.0 because new customer with zero tenure has no charges yet.
-    cleaned_data["TotalCharges"] = pd.to_numeric(
-        cleaned_data["TotalCharges"],
-        errors="coerce"
-    ).fillna(0.0)
+    # Converting TotalCharges to numeric, coercing errors to NaN
+    cleaned_data["TotalCharges"] = pd.to_numeric(charges, errors="raise")
+    cleaned_data.loc[new_customer_blank, "TotalCharges"] = 0.0
+
+    # Stop if any other misssing charges need investigation
+    if cleaned_data["TotalCharges"].isna().any():
+        raise ValueError(
+            "Unexpected missing TotalCharges values need to be reviewed."
+        )
+
 
     return cleaned_data
 
@@ -32,7 +37,7 @@ def main() -> None:
     print("Cleaned dataset shape:", cleaned_data.shape)
     print("Total Charges Data type:", cleaned_data["TotalCharges"].dtype)
     print("Missing Total Charges values:", cleaned_data["TotalCharges"].isna().sum())
-    print("\Customer with zero tenure and zero total chaeges:")
+    print("\Customer with zero tenure and zero total charges:")
 
     print(
         cleaned_data.loc[
