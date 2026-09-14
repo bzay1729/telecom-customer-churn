@@ -13,7 +13,7 @@ def clean_data(data: pd.DataFrame) -> pd.DataFrame:
     # Only use zero for blank charges when tenure is 0.
     new_customer_blank = charges.eq("") & cleaned_data["tenure"].eq(0)
 
-    # Converting TotalCharges to numeric, coercing errors to NaN
+    # Converting TotalCharges to numeric.
     cleaned_data["TotalCharges"] = pd.to_numeric(charges, errors="raise")
     cleaned_data.loc[new_customer_blank, "TotalCharges"] = 0.0
 
