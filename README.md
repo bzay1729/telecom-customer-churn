@@ -146,6 +146,25 @@ To investigate the class imbalance, Logistic Regression was also evaluated with
 
 Class weighting substantially improved recall from 54.31% to 80.13% and increased the F1 score, while reducing accuracy and precision. ROC-AUC remained almost unchanged, indicating that the model's overall ranking ability was similar.
 
+### Gradient Boosting Hyperparameter Search
+
+Gradient Boosting was tuned using `RandomizedSearchCV` with 40 parameter
+combinations and 5-fold stratified cross-validation.
+
+The best configuration achieved a development cross-validation ROC-AUC of
+**0.8512**, compared with **0.8481** for the untuned Gradient Boosting baseline.
+
+Best parameters:
+
+- `learning_rate = 0.20`
+- `n_estimators = 100`
+- `max_depth = 1`
+- `min_samples_split = 2`
+- `min_samples_leaf = 2`
+- `subsample = 0.85`
+
+The final test dataset remains excluded from hyperparameter selection.
+
 ## Project Workflow
 
 ```text
