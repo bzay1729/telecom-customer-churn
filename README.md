@@ -131,6 +131,21 @@ The project contains only 19 predictors, many of which are categorical. Keeping 
 
 If PCA is evaluated later, it will be included inside the training pipeline so that it is fitted only on training data and does not introduce data leakage.
 
+### Class-Weighted Logistic Regression
+
+To investigate the class imbalance, Logistic Regression was also evaluated with
+`class_weight="balanced"` using the same 5-fold stratified cross-validation setup.
+
+| Metric | Baseline | Class-Weighted |
+|---|---:|---:|
+| Accuracy | 0.8021 | 0.7485 |
+| Precision | 0.6529 | 0.5169 |
+| Recall | 0.5431 | 0.8013 |
+| F1 Score | 0.5923 | 0.6283 |
+| ROC-AUC | 0.8462 | 0.8460 |
+
+Class weighting substantially improved recall from 54.31% to 80.13% and increased the F1 score, while reducing accuracy and precision. ROC-AUC remained almost unchanged, indicating that the model's overall ranking ability was similar.
+
 ## Project Workflow
 
 ```text
