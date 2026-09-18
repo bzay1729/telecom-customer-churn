@@ -136,7 +136,7 @@ If PCA is evaluated later, it will be included inside the training pipeline so t
 To investigate the class imbalance, Logistic Regression was also evaluated with
 `class_weight="balanced"` using the same 5-fold stratified cross-validation setup.
 
-| Metric | Baseline | Class-Weighted | Random Forest  Gradient Boosting |
+| Metric | Baseline | Class-Weighted | Random Forest | Gradient Boosting |
 |---|---:|---:|---:|--:|
 | Accuracy | 0.8021 | 0.7485 | 0.7861 | 0.8033 |
 | Precision | 0.6529 | 0.5169 | 0.6262  | 0.6619 |
