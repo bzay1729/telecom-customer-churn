@@ -271,9 +271,9 @@ Deployment
 * [x] Additional model comparison
 * [x] Hyperparameter tuning
 * [x] Classification threshold analysis
-* [ ] Final test-set evaluation
-* [ ] Model persistence
-* [ ] FastAPI prediction service
+* [x] Final test-set evaluation
+* [x] Model persistence
+* [x] FastAPI prediction service
 * [ ] Streamlit application
 * [ ] Automated tests
 * [ ] Docker containerization
