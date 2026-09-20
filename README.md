@@ -186,6 +186,38 @@ The best F1 score was achieved at a threshold of `0.35`:
 This threshold was selected before final test-set evaluation and will be used
 as the primary operating threshold for the final model.
 
+## Final Test Evaluation
+
+After completing model selection, hyperparameter tuning, and threshold analysis
+using only the training dataset, the final Gradient Boosting pipeline was
+evaluated once on the previously untouched test set.
+
+The selected classification threshold was `0.35`.
+
+| Metric | Final Test Score |
+|---|---:|
+| Accuracy | 0.7786 |
+| Precision | 0.5643 |
+| Recall | 0.7273 |
+| F1 Score | 0.6355 |
+| ROC-AUC | 0.8487 |
+
+### Confusion Matrix
+
+|  | Predicted No Churn | Predicted Churn |
+|---|---:|---:|
+| Actual No Churn | 825 | 210 |
+| Actual Churn | 102 | 272 |
+
+The model correctly identified 272 of the 374 customers who churned,
+resulting in a churn recall of 72.73%.
+
+The final test results were close to the out-of-fold development results,
+indicating that the model generalized well to previously unseen customers.
+
+No additional model or threshold tuning was performed after inspecting the
+final test results.
+
 ## Project Workflow
 
 ```text
@@ -235,10 +267,10 @@ Deployment
 * [x] Feature preprocessing pipeline
 * [x] Logistic Regression baseline
 * [x] 5-fold cross-validation
-* [ ] Class imbalance experiments
-* [ ] Additional model comparison
-* [ ] Hyperparameter tuning
-* [ ] Classification threshold analysis
+* [x] Class imbalance experiments
+* [x] Additional model comparison
+* [x] Hyperparameter tuning
+* [x] Classification threshold analysis
 * [ ] Final test-set evaluation
 * [ ] Model persistence
 * [ ] FastAPI prediction service
