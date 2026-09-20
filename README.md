@@ -165,6 +165,27 @@ Best parameters:
 
 The final test dataset remains excluded from hyperparameter selection.
 
+### Classification Threshold Analysis
+
+The tuned Gradient Boosting model was evaluated using out-of-fold training
+probabilities across a range of classification thresholds.
+
+The default threshold of `0.50` produced:
+
+- Precision: 0.6675
+- Recall: 0.5344
+- F1 Score: 0.5936
+
+The best F1 score was achieved at a threshold of `0.35`:
+
+- Accuracy: 0.7879
+- Precision: 0.5813
+- Recall: 0.7171
+- F1 Score: 0.6421
+
+This threshold was selected before final test-set evaluation and will be used
+as the primary operating threshold for the final model.
+
 ## Project Workflow
 
 ```text
