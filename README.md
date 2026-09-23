@@ -218,6 +218,28 @@ indicating that the model generalized well to previously unseen customers.
 No additional model or threshold tuning was performed after inspecting the
 final test results.
 
+## Prediction API
+
+The trained churn model is exposed through a FastAPI REST API.
+
+### Endpoints
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/` | API status |
+| GET | `/health` | Health check |
+| POST | `/predict` | Generate churn prediction |
+| GET | `/docs` | Interactive API documentation |
+
+The `/predict` endpoint validates customer information using Pydantic before
+passing the data to the saved machine learning pipeline.
+
+The response includes:
+
+- Churn probability
+- Classification threshold
+- Final churn prediction
+
 ## Project Workflow
 
 ```text
