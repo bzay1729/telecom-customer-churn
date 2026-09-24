@@ -240,6 +240,27 @@ The response includes:
 - Classification threshold
 - Final churn prediction
 
+## Streamlit Application
+
+The project includes an interactive Streamlit interface for generating churn
+predictions from customer information.
+
+The application collects customer demographics, subscribed services, contract
+details, and billing information, then passes the data through the saved
+machine learning pipeline.
+
+The prediction output includes:
+
+- Churn probability
+- Selected decision threshold
+- Final churn classification
+
+### Run Locally
+
+```bash
+streamlit run streamlit_app.py
+The application would normally availabel at: http://localhost.8501
+
 ## Project Workflow
 
 ```text
