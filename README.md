@@ -317,7 +317,7 @@ Deployment
 * [x] Final test-set evaluation
 * [x] Model persistence
 * [x] FastAPI prediction service
-* [ ] Streamlit application
+* [x] Streamlit application
 * [ ] Automated tests
 * [ ] Docker containerization
 * [ ] GitHub Actions CI/CD
