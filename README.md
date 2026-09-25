@@ -261,6 +261,16 @@ The prediction output includes:
 streamlit run streamlit_app.py
 The application would normally availabel at: http://localhost.8501
 
+
+## Docker
+
+The Streamlit application can be run inside a Docker container.
+
+### Build the Docker Image
+
+```bash
+docker build -t telecom-churn-app .
+
 ## Project Workflow
 
 ```text
@@ -318,8 +328,8 @@ Deployment
 * [x] Model persistence
 * [x] FastAPI prediction service
 * [x] Streamlit application
-* [ ] Automated tests
-* [ ] Docker containerization
+* [x] Automated tests
+* [x] Docker containerization
 * [ ] GitHub Actions CI/CD
 * [ ] Cloud deployment
 
