@@ -327,7 +327,7 @@ Deployment
 * [x] Streamlit application
 * [x] Automated tests
 * [x] Docker containerization
-* [ ] GitHub Actions CI/CD
+* [x] GitHub Actions CI/CD
 * [ ] Cloud deployment
 
 ## Technology Stack
