@@ -307,8 +307,7 @@ Docker
 Testing and CI/CD
      ↓
 Deployment
-```
-text
+
 ## Current Project Status
 
 * [x] Dataset inspection
