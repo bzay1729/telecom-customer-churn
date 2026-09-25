@@ -334,7 +334,15 @@ Deployment
 * [x] Automated tests
 * [x] Docker containerization
 * [x] GitHub Actions CI/CD
+<<<<<<< HEAD
 * [x] Cloud deployment
+=======
+<<<<<<< HEAD
+* [ ] Cloud deployment
+=======
+* [x] Cloud deployment
+>>>>>>> 8ed7425 (docs: add live deployment link and complete project status)
+>>>>>>> 5aa60ed (docs: add live deployment link and complete project status)
 
 ## Technology Stack
 
