@@ -4,4 +4,5 @@ __pycache__/
 .env
 .DS_Store
 models/*.joblib
+!models/churn_model.joblib
 data/processed/
