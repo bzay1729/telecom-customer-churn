@@ -256,9 +256,8 @@ The prediction output includes:
 - Final churn classification
 
 ### Run Locally
+bash = streamlit run streamlit_app.py
 
-```bash
-streamlit run streamlit_app.py
 The application would normally availabel at: http://localhost.8501
 
 
@@ -268,12 +267,11 @@ The Streamlit application can be run inside a Docker container.
 
 ### Build the Docker Image
 
-```bash
-docker build -t telecom-churn-app .
+bash = docker build -t telecom-churn-app .
+
 
 ## Project Workflow
 
-```text
 Raw Dataset
      ↓
 Data Validation
