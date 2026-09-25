@@ -1,3 +1,9 @@
+## Live Demo
+
+Try the deployed application here:
+
+https://telecom-customer-churn-analysis.streamlit.app
+
 # Telecom Customer Churn Prediction
 
 An end-to-end machine learning project for predicting telecom customer churn using structured customer, service, and billing data.
@@ -328,7 +334,7 @@ Deployment
 * [x] Automated tests
 * [x] Docker containerization
 * [x] GitHub Actions CI/CD
-* [ ] Cloud deployment
+* [x] Cloud deployment
 
 ## Technology Stack
 
